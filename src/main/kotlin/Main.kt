@@ -30,7 +30,6 @@ fun main() {
 //        Test("MD5 очень сложный", md5, "686e697538050e4664636337cc3b834f", 10),
 
         // ---------- bcrypt (cost=10) ----------
-        // ! ВНИМАНИЕ: очень медленно, лучше небольшую maxLength (3–5)
         Test("bcrypt лёгкий", bcrypt, "\$2a\$10\$YQak9uaePYz6Hap5Rz8D3OOwd/HKH7bFRxg6dzSmmu04qlcJSwSei", 4),
         Test("bcrypt средний", bcrypt, "\$2a\$10\$9YKVe37kUMmlq69W81aB5OkQF.GtDQP8UZ/OlEr6QBi9Kopwxb17y", 5),
         Test("bcrypt сложный", bcrypt, "\$2a\$10\$.EUZO097Xcfx.LutPjCbj.V2FZzmP3ao9dcYGDs682cZ/cNFEiOi6", 5),
