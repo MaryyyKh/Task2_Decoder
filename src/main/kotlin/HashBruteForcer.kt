@@ -16,10 +16,6 @@ data class BruteForceResult(
     val triedCombinations: Long
 )
 
-/**
- * Многопоточный переборщик паролей.
- * Перебирает все строки из charset длиной от 1 до maxLength.
- */
 class HashBruteForcer(
     private val charset: String = "abcdefghijklmnopqrstuvwxyz0123456789",
     private val threads: Int = Runtime.getRuntime().availableProcessors().coerceAtLeast(1)
@@ -72,7 +68,6 @@ class HashBruteForcer(
         )
     }
 
-    /** Перебор строк фиксированной длины в несколько потоков */
     private fun bruteForceLength(
         length: Int,
         targetHash: String,
@@ -114,7 +109,6 @@ class HashBruteForcer(
         return foundPassword.get()
     }
 
-    /** Перевод номера комбинации в строку пароля (основание = размер алфавита) */
     private fun numberToPassword(index: Long, length: Int): String {
         val base = charset.length
         var n = index

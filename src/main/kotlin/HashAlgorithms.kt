@@ -4,7 +4,6 @@ import de.mkammerer.argon2.Argon2Factory
 import java.math.BigInteger
 import java.security.MessageDigest
 
-/** Общий интерфейс для всех алгоритмов */
 interface HashAlgorithm {
     val name: String
     fun matches(candidate: String, targetHash: String): Boolean
@@ -36,7 +35,7 @@ class Sha1Algorithm : HashAlgorithm {
     }
 }
 
-/** bcrypt ($2a$…$…) */
+/** bcrypt */
 class BcryptAlgorithm : HashAlgorithm {
     override val name: String = "bcrypt"
 
@@ -47,7 +46,7 @@ class BcryptAlgorithm : HashAlgorithm {
     }
 }
 
-/** Argon2id — принимает полный строковый хэш $argon2id$... */
+/** Argon2id */
 class Argon2idAlgorithm : HashAlgorithm {
     override val name: String = "Argon2id"
 
